@@ -19,7 +19,6 @@ proxies:
     - { name: '日本KTM', type: ss, server: gtm.ktmwan.com, port: 27251, cipher: chacha20-ietf-poly1305, password: bfc7d4c6-cb9f-4fea-9c7e-c0e2f5c71cf7, udp: true }
     - { name: '日本 - HY2', server: rb.ovogood.xyz, port: 50011, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: a440015c-decc-4497-9abe-65b16e98aede }
     - { name: '新加坡 - HY2', server: sg.ovogood.xyz, port: 50033, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: a440015c-decc-4497-9abe-65b16e98aede }
-    - { name: '澳大利亚 - HY2', server: au.ovogood.xyz, port: 50011, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: a440015c-decc-4497-9abe-65b16e98aede }
     - { name: '印度 - HY2', server: in.ovogood.xyz, port: 50011, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: a440015c-decc-4497-9abe-65b16e98aede }
     - { name: '美国 - HY2', server: us.ovogood.xyz, port: 50033, udp: true, skip-cert-verify: true, sni: ovo.1234567890spcloud.com, type: hysteria2, password: a440015c-decc-4497-9abe-65b16e98aede }
     - { name: '日本aws - 001', server: jpfsc.1234567890fscloud.com, port: 20123, udp: true, skip-cert-verify: true, sni: 234224.1234567890spcloud.com, type: hysteria2, password: e9042b9b-f362-4250-b08c-4148b120f1a6 }
@@ -29,24 +28,24 @@ proxies:
     - { name: '新加坡aws - 002', server: sgfsc.1234567890fscloud.com, port: 20185, udp: true, skip-cert-verify: true, sni: 234224.1234567890spcloud.com, type: hysteria2, password: e9042b9b-f362-4250-b08c-4148b120f1a6 }
     - { name: '新加坡aws - 003', server: sgfsc.1234567890fscloud.com, port: 20195, udp: true, skip-cert-verify: true, sni: 234224.1234567890spcloud.com, type: hysteria2, password: e9042b9b-f362-4250-b08c-4148b120f1a6 }
 proxy-groups:
-    - { name: '🚀 节点选择', type: select, proxies: ['♻️ 自动选择','🔧 故障转移', 'AkileCloud','日本KTM','日本 - HY2','澳大利亚 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003'] }
+    - { name: '🚀 节点选择', type: select, proxies: ['♻️ 自动选择','🔧 故障转移', 'AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003'] }
     - { name: '♻️ 自动选择', type: url-test, proxies: ['AkileCloud','日本KTM'], url: http://www.gstatic.com/generate_204, interval: 300 }
     - { name: '🔧 故障转移', type: fallback, proxies: ['AkileCloud'], url: http://www.gstatic.com/generate_204, interval: 300 }
-    - { name: '🎬 NETFLIX', type: select, proxies: ['🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','澳大利亚 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: '🎬 DisneyPlus', type: select, proxies: ['🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','澳大利亚 - HY2', '新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: '🎬 YouTube', type: select, proxies: ['🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','澳大利亚 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: '🎬 哔哩哔哩', type: select, proxies: ['🚀 节点选择','🎯 全球直连', 'AkileCloud','日本KTM','日本 - HY2','澳大利亚 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: '🎵 TikTok', type: select, proxies: ['🚀 节点选择','♻️ 自动选择', 'AkileCloud','日本KTM','日本 - HY2','澳大利亚 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: '🎬 国外媒体', type: select, proxies: ['🚀 节点选择','♻️ 自动选择', 'AkileCloud','日本KTM','日本 - HY2','澳大利亚 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: '🌏 国外网站', type: select, proxies: ['🚀 节点选择','♻️ 自动选择', 'AkileCloud','日本KTM','日本 - HY2','澳大利亚 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: '🌏 国内网站', type: select, proxies: ['🎯 全球直连','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','澳大利亚 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: 'Ⓜ️ 微软服务',type: select, proxies: ['🎯 全球直连','🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','澳大利亚 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: '🍎 苹果服务', type: select, proxies: ['🎯 全球直连','🚀 节点选择','♻️ 自动选择', 'AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','澳大利亚 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: '📲 电报信息', type: select, proxies: ['🚀 节点选择','♻️ 自动选择', 'AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','澳大利亚 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: '🎮 游戏平台', type: select, proxies: ['🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','澳大利亚 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
-    - { name: '🎯 全球直连', type: select, proxies: ['DIRECT','🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','澳大利亚 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🎬 NETFLIX', type: select, proxies: ['🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🎬 DisneyPlus', type: select, proxies: ['🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🎬 YouTube', type: select, proxies: ['🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🎬 哔哩哔哩', type: select, proxies: ['🚀 节点选择','🎯 全球直连', 'AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🎵 TikTok', type: select, proxies: ['🚀 节点选择','♻️ 自动选择', 'AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🎬 国外媒体', type: select, proxies: ['🚀 节点选择','♻️ 自动选择', 'AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🌏 国外网站', type: select, proxies: ['🚀 节点选择','♻️ 自动选择', 'AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🌏 国内网站', type: select, proxies: ['🎯 全球直连','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: 'Ⓜ️ 微软服务',type: select, proxies: ['🎯 全球直连','🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🍎 苹果服务', type: select, proxies: ['🎯 全球直连','🚀 节点选择','♻️ 自动选择', 'AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '📲 电报信息', type: select, proxies: ['🚀 节点选择','♻️ 自动选择', 'AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🎮 游戏平台', type: select, proxies: ['🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🎯 全球直连', type: select, proxies: ['DIRECT','🚀 节点选择','♻️ 自动选择','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
     - { name: '🍃 应用净化',type: select, proxies: ['REJECT','DIRECT']}
-    - { name: '🐟 漏网之鱼', type: select, proxies: ['🚀 节点选择','♻️ 自动选择','🎯 全球直连','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','澳大利亚 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
+    - { name: '🐟 漏网之鱼', type: select, proxies: ['🚀 节点选择','♻️ 自动选择','🎯 全球直连','AkileCloud','日本KTM','日本 - HY2','新加坡 - HY2','印度 - HY2','美国 - HY2','日本aws - 001','日本aws - 002','日本aws - 003','新加坡aws - 001','新加坡aws - 002','新加坡aws - 003']}
 rules:
     - 'DOMAIN-SUFFIX,ol.epicgames.com,🎮 游戏平台'
     - 'DOMAIN-SUFFIX,epicgames.com,🎮 游戏平台'
